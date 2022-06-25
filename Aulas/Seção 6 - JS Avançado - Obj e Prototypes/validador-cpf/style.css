@@ -1,0 +1,98 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  --cor-btn: #45cf1bdc;
+}
+
+body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgba(226, 183, 43, 0.555);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 300px;
+  background-color: whitesmoke;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+
+.cpfWraper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.cpfWraper h1 {
+  margin-bottom: 20px;
+}
+
+.cpfWraper input {
+  padding: 10px;
+  width: 80%;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+button {
+  border: none;
+  width: 80%;
+  position: relative;
+  display: inline-block;
+}
+
+button {
+  color: whitesmoke;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--cor-btn);
+  display: block;
+  position: relative;
+  padding: 8px 40px;
+  text-shadow: 0px 1px 0px #000;
+  filter: dropshadow(color=#000, offx=0px, offy=1px);
+
+  box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
+  -webkit-box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
+  -moz-box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
+
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
+button:active {
+  top: 10px;
+  background-color: var(--cor-btn);
+
+  box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 var(--cor-btn);
+  -webkit-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 var(--cor-btn);
+  -moz-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3pxpx 0 var(--cor-btn);
+}
+
+span {
+    display: none;
+    padding-top: 40px;
+}

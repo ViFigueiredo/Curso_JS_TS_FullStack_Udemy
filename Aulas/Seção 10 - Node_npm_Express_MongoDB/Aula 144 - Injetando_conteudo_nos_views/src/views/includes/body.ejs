@@ -1,0 +1,32 @@
+<body>
+
+    <section class="container">
+      <h1>
+  
+        <!-- escapa tags html dentro da variavel - exibe a tag-->
+        <%#= titulo %>
+  
+        <!-- não escapa tags html dentro da variavel - não exibe a tag-->
+        <%#- titulo %>
+  
+        <!-- condicionais -->
+        <% if(typeof titulo !=='undefined' ) { %>
+          <%= titulo %>
+        <% } else { %>
+          O titulo não foi enviado.
+        <% } %>
+  
+        <!-- forEach -->
+        <%# numeros.forEach(num=> { %>
+          <%#= num %>
+        <%# }); %>
+  
+      </h1>
+  
+      <form action="/" method="post">
+        <label>Cliente</label>
+        <input type="text" name="cliente" id="">
+        <button>Submit</button>
+      </form>
+    </section>
+  

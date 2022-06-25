@@ -1,0 +1,52 @@
+
+// npm init -y
+-> instala o npm sem perguntar os argumentos de configuração
+
+// npm install ou npm i
+-> instala um pacote utilizando o npm
+
+// npm i "pct"
+-> instala o pacote na versão mais recente
+
+// npm i "pct" -E
+-> instala o pct na versão mais recente e inibi atualizações
+
+// npm update
+-> atualiza o npm para versão mais recente
+
+// npm i "pct" --save-dev
+-> altera a configuração de dependencia para desenvolvimento (devDependencies)
+
+// npm i "pct" --save-prod
+-> altera a configuração de dependencia para produção (Dependencies)
+
+// npm i "pct"@x.x.x
+-> instala o pct numa versão específica
+
+// nomear versão de aplicação
+2.      1.      0
+major   minor   patch
+
+-> patch - correção de bugs
+-> minor - adicionado novos recursos mantendo a compatibilidade
+-> major - adicionado novos recursos sem manter a compatibilidade
+
+// npm i ou npm update utilizando o "^" ou "~"
+-> pnto de parada da versão do pct 
+-> "express": "^2.1.0" = atualiza para a versão mais recente do pct/major
+-> "express": "~2.1.0" = atualiza para a versão mais recente do pct/patch
+
+// npm i ou npm update utilizando o 4.x
+-> atualiza para a versão do major específica e busca a versão mais recente do minor e patch
+
+// npm unistall "pct"
+-> desinstala o pct
+
+// npm ls
+-> lista as dependencias do npm disponiveis e instaladas
+
+// npm ls --depth=0
+-> lista as dependencias do npm instaladas
+
+// npm outdated
+-> lista as dependencias do npm desatualizadas

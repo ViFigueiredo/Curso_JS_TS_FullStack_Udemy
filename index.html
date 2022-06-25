@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViFigueiredo - Projetos em JS Udemy</title>
+    <style>
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            width: 100%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 80%;
+            height: 70%;
+            background-color: white;
+            border-radius: 25px;
+        }
+        
+        .container,
+        .projetosWraper img {
+            border-radius: 25px;
+        }
+        
+        .header,
+        .containerProjetos {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header {
+            flex-direction: column;
+        }
+        
+        .logo {
+            width: 130px;
+            height: 130px;
+            background-color: yellow;
+            border-radius: 50%;
+            background-image: url('https://avatars.githubusercontent.com/u/67883343?v=4');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        
+        .container,
+        .logo,
+        .containerProjetos {
+            margin: 2% 0;           
+        }
+
+        .projetosWraper {
+            margin: 2%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .projetosWraper img {
+            width: 130px;
+            height: 150px;
+            background-color: blueviolet;
+        }
+
+        .projetosWraper span {
+            margin-top: 15px;
+        }
+
+        .containerProjetos {
+            flex-wrap: wrap;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <div class="logo"></div><!-- logo -->
+            <h1>Aqui está os projetos que aprendi atualmente...</h1>
+        </div><!-- header -->
+
+        <div class="containerProjetos">
+
+            <div class="projetosWraper calculadoraIMC">
+                <img src="https://image.freepik.com/vetores-gratis/sucesso-de-mulheres-perdendo-peso_46527-29.jpg" alt="">
+                <span> Calculadora de IMC </span>
+            </div><!-- projetosWraper -->
+
+            <div class="projetosWraper relogio">
+                <img src="https://image.freepik.com/vetores-gratis/ilustracao-do-icone-dos-desenhos-animados-do-relogio-de-pulso-relogio-objeto-icone-conceito-isolado-vetor-premium-estilo-flat-cartoon_138676-2421.jpg" alt="">
+                <span> Relógio </span>
+            </div><!-- projetosWraper -->
+
+            <div class="projetosWraper listaTarefas">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ0oL-YPJ2XUJgbBVcv3Ab8YaYylhf5IJSRw&usqp=CAU" alt="">
+                <span> Lista de Tarefas </span>
+            </div><!-- projetosWraper -->
+
+            <div class="projetosWraper validadorCPF">
+                <img src="https://www.4devs.com.br/imagens/home/banner_val_cartao_credito_new.jpg" alt="">
+                <span> Validador de CPF </span>
+            </div><!-- projetosWraper -->
+
+        </div><!-- containerProjetos -->
+
+    </div><!-- container -->
+    
+    <script>
+
+        let calcIMC = document.querySelector(".calculadoraIMC");
+        calcIMC.onclick = function(){ window.location.href = './Aulas/Seção 3 - Lógica/aula44/index.html'};
+        calcIMC.style.cursor = 'pointer';
+
+        let clock = document.querySelector(".relogio");
+        clock.onclick = function(){ window.location.href = './Aulas/Seção 3 - Lógica/aula66/index.html'};
+        clock.style.cursor = 'pointer';
+
+        let listaTarefas = document.querySelector(".listaTarefas");
+        listaTarefas.onclick = function(){ window.location.href = './Aulas/Seção 3 - Lógica/aula67/index.html'};
+        listaTarefas.style.cursor = 'pointer';
+
+        let validadorCPF = document.querySelector(".validadorCPF");
+        validadorCPF.onclick = function(){ window.location.href = './Aulas/Seção 6 - JS Avançado - Obj e Prototypes/validador-cpf/index.html'};
+        validadorCPF.style.cursor = 'pointer';
+
+    </script>
+</body>
+</html>

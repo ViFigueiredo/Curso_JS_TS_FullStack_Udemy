@@ -1,0 +1,12 @@
+# Gerando par de chaves SSH utilizando o git-bash
+ssh-keygen
+Enter
+
+# No Windows, todo primeiro acesso precisa ser feito
+eval $(ssh-agent) > Retorna um valor de PID
+ssh-add C:/Users/ViFigueiredo/.ssh/id_rsa > atribui a chave criado pelo cliente ao SSH
+
+# Abrir a pasta que contém as chaves
+start ~/.ssh
+
+# Abrir a chave .pub com o bloco de notas, copiar a chave e colar no servidor

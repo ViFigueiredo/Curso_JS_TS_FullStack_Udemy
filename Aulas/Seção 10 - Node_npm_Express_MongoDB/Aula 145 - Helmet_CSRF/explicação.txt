@@ -1,0 +1,20 @@
+
+# HELMET
+O Helmet pode ajudar a proteger o seu aplicativo de algumas vulnerabilidades da web bastante conhecidas configurando os cabeçalhos HTTP adequadamente.
+
+O Helmet é na realidade apenas uma coleção de oito funções de middlewares menores que configuram cabeçalhos HTTP relacionados à segurança:
+
+> A csp configura o cabeçalho Content-Security-Policy para ajudar a evitar ataques de cross-site scripting e outras injeções cross-site.
+> A hidePoweredBy remove o cabeçalho X-Powered-By.
+> A hsts configura o cabeçalho Strict-Transport-Security que impinge conexões seguras (HTTP sobre SSL/TLS) com o servidor.
+> A ieNoOpen configura o X-Download-Options para o IE8+.
+> A noCache configura os cabeçalhos Cache-Control e Pragma para desativar o armazenamento em cache no lado do cliente.
+> A noSniff configura o X-Content-Type-Options para evitar que os navegadores procurem por MIME uma resposta a partir do content-type declarado.
+> A frameguard configura o cabeçalho X-Frame-Options para fornecer proteção clickjacking.
+> A xssFilter configura o X-XSS-Protection para ativar o filtro de Cross-site scripting (XSS) nos navegadores da web mais recentes.
+
+# CSRF - CSURF
+Utilizado em envio de requisições, o Cross-site Request Forgery (CSRF) é um tipo de ataque de websites maliciosos. Um ataque CSRF às vezes é chamado de ataque de um clique ou transporte de sessão. Esse tipo de ataque envia solicitações desautorizadas de um usuário no qual o website confia.
+
+# OBS
+O Helmet é para segurança da aplicação, portanto, caso você esteja com um sistema ainda em desenvolvimento, usando urls como "127.0.0.1", "localhost" ou até um servidor com IP externo, sem usar SSL (https), é recomendável desativá-lo. Ele pode bloquear importação de scripts e arquivos de CSS. Caso ocorra erros ao importar o bundle.js, arquivos de CDN (como bootstrap, por exemplo) ou CSS, basta desativar o helmet para correção. Isso só ocorrerá em sistemas sem SSL (sem https na URL).

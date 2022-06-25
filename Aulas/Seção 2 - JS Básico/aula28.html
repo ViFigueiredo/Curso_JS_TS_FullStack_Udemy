@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 28 / Math e Numbers</title>
+</head>
+<body>
+
+    <div id="texto"></div>
+
+    <script>
+
+        // let numero = prompt("Insira um número:");
+        let numero = 50.4564687;
+        let texto = document.getElementById('texto'); 
+
+        texto.innerHTML = " ";
+        texto.innerHTML += `<p><h1>Seu número é: ${numero}</h1></p>`
+        texto.innerHTML += `<p>Raíz quadrada: ${Math.sqrt(numero)}</p>`
+        texto.innerHTML += `<p>É inteiro? ${Number.isInteger(numero)}</p>`
+        texto.innerHTML += `<p>Arredondando para baixo: ${Math.floor(numero)}</p>`
+        texto.innerHTML += `<p>Arredondando para cima: ${Math.ceil(numero)}</p>`
+        texto.innerHTML += `<p>Apenas 2 casas decimais: ${numero.toFixed(2)}</p>`
+        
+    </script>
+</body>
+</html>

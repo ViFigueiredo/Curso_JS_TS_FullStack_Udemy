@@ -1,0 +1,22 @@
+# Após intalar a VM
+sudo apt update
+sudo apt upgrade -y
+
+# Instalar o SSH
+sudo apt install ssh
+
+# Acesso SSH
+ssh user@IP
+
+# Configurar SSH para bloquear senhas de login
+sudo nano /etc/ssh/ssh_config
+
+# Descomentar (#)
+PasswordAuthentication yes (alterar para "no")
+MaxAuthTries 6 (alterar conforme necessidade de várias chaves)
+
+# Reiniciar SSH
+sudo systemctl restart ssh
+
+# Adicionar a chave .pub ao server ssh
+sudo nano /home/vinicius/.ssh/authorized_keys

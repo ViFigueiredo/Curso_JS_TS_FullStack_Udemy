@@ -1,0 +1,17 @@
+
+Ubuntu + WSL2 + SSH
+0 votos a favor
+Vinicius · Aula 163 · 1 minuto atrás
+Pra quem quiser utilizar o WSL2, vamos aos passo:
+
+#1 - Instalar
+
+Assista o Diolinux ensinando os comandos básicos: https://www.youtube.com/watch?v=o1_E4PBl30s&t=403s
+
+#2 - Instalando SSH e corrigindo erros de connection refused(publickey)
+
+Faça o procedimento "Enable Port 22 in Windows Firewall" em: https://www.illuminiastudios.com/dev-diaries/ssh-on-windows-subsystem-for-linux/
+
+#3 - Caso ainda persista o erro de connection refused(publickey)
+
+Faça todos procedimentos em: https://phoenixnap.com/kb/ssh-permission-denied-publickey
