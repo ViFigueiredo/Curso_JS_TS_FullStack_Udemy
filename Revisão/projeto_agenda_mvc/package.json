@@ -22,6 +22,7 @@
     "express": "^4.18.1",
     "express-session": "^1.17.3",
     "helmet": "^5.1.0",
+    "ip": "^1.1.8",
     "mongoose": "^6.4.1",
     "regenerator-runtime": "^0.13.9",
     "style-loader": "^3.3.1"
