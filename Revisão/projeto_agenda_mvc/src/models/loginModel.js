@@ -4,6 +4,7 @@ const bcryptjs = require('bcryptjs');
 
 // Construtor do model
 const LoginSchema = new mongoose.Schema({
+  apelido: { type: String, required: true },
   email: { type: String, required: true },
   password: { type: String, required: true }
 });
@@ -55,6 +56,8 @@ class Login {
 
   valida() {
     this.cleanUp();
+    // apelido não pode estar vazio
+    if(this.body.apelido === '') this.errors.push('Apelido inválido!')
     // o e-mail precisa ser válido
     if (!validator.isEmail(this.body.email)) this.errors.push('E-mail inválido!');
     // a senha precisa ter entre 3 e 50
@@ -73,6 +76,7 @@ class Login {
     // garante que apenas os campos do formulário serão enviados pelo model
     // ou seja, remove o _csrf
     this.body = {
+      apelido: this.body.apelido,
       email: this.body.email,
       password: this.body.password
     };
