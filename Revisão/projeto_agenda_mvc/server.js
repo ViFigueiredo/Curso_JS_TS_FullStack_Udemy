@@ -47,8 +47,8 @@ app.set('views', path.resolve(__dirname, 'src', 'views')); // diretório
 app.set('view engine', 'ejs');
 
 // Middlewares de segurança
-const helmet = require('helmet'); // cabeçalhos HTTP
-app.use(helmet()); // 9 módulos de proteção para o express
+// const helmet = require('helmet'); // cabeçalhos HTTP e redireciona para https (evitar em localhost)
+// app.use(helmet()); // 9 módulos de proteção para o express
 const csrf = require('csurf'); // impede post externo em formulários
 app.use(csrf());
 

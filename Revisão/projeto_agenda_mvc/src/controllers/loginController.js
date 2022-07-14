@@ -7,6 +7,8 @@ exports.index = (req, res) => {
 };
 
 // todo retorno (loginModel) de uma async também é uma promisse, logo devemos usar async/await
+
+// registrar
 exports.register = async (req, res) => {
   try {
     const login = new Login(req.body);
@@ -19,16 +21,18 @@ exports.register = async (req, res) => {
       });
       return;
     }
+
     req.flash('success', 'Seu usuário foi criado com sucesso.');
     req.session.save(() => {
       return res.redirect('/login/index');
     });
-  } catch (err) {
+  } catch (e) {
+    console.log(e);
     return res.render('404');
-    console.log(err);
   }
 };
 
+// logar
 exports.login = async (req, res) => {
   try {
     const login = new Login(req.body);
@@ -42,18 +46,19 @@ exports.login = async (req, res) => {
       return;
     }
 
-    req.flash('success', 'Você logou no sistema com sucesso.');
+    req.flash('success', 'Você entrou no sistema.');
     req.session.user = login.user;
-    req.session.save(() => {
+    req.session.save( () => {
       return res.redirect('/login/index');
     });
-  } catch (err) {
+  } catch (e) {
+    console.log(e);
     return res.render('404');
-    console.log(err);
   }
 };
 
-exports.logout = async (req, res) => {
+// deslogar
+exports.logout = (req, res) => {
   req.session.destroy();
   res.redirect('/');
-}
+};

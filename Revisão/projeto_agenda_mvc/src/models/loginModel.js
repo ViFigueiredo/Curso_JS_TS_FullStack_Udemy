@@ -10,6 +10,8 @@ const LoginSchema = new mongoose.Schema({
 
 const LoginModel = mongoose.model('Login', LoginSchema);
 
+// neste model estamos trabalhando com classes
+
 class Login {
   constructor(body) {
     this.body = body;
@@ -46,7 +48,6 @@ class Login {
   }
 
   async userExists() {
-    wWwWwW
     //se usuário existir
     this.user = await LoginModel.findOne({ email: this.body.email });
     if (this.user) this.errors.push('Usuário já existe.');

@@ -17,18 +17,20 @@ route.get('/agenda', loginRequired, homeController.agenda);
 // Rotas -> Página de login e registro
 route.get('/login/index', loginController.index);
 
-// Rotas -> Envio de cadastro
+// Rotas -> Cadastrar
 route.post('/login/register', loginController.register);
 
-// Rotas -> Envio de login
+// Rotas -> Logar
 route.post('/login/login', loginController.login);
 
-// Rotas -> Envio de login
+// Rotas -> Deslogar
 route.get('/login/logout', loginController.logout);
 
-// Rotas -> Cadastro de contato
+// Rotas -> Cadastrar contato
 route.get('/contato/index', loginRequired, contatoController.index);
 route.post('/contato/register', loginRequired, contatoController.register);
-route.post('/contato/index/:id', loginRequired, contatoController.editContato);
+route.get('/contato/index/:id', loginRequired, contatoController.editContato);
+route.post('/contato/edit/:id', loginRequired, contatoController.edit);
+route.get('/contato/delete/:id', loginRequired, contatoController.delete);
 
 module.exports = route;

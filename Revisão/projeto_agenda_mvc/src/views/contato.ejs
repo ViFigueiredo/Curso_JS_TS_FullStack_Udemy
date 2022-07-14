@@ -1,41 +1,45 @@
 <%- include('includes/head') %>
-<%- include('includes/nav') %>
+  <%- include('includes/nav') %>
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-2"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2"></div>
 
-    <div class="col-lg-8 my-3">
-      <h1 class="text-center"> Agenda - Novo contato </h1>
-      <p class="text-center lead"> Preencha as informações do seu contato. </p>
+        <div class="col-lg-8 my-3">
+          <h1 class="text-center"> Agenda - Novo contato </h1>
+          <p class="text-center lead"> Preencha as informações do seu contato. </p>
 
-      <%- include('includes/messages'); %>
+          <%- include('includes/messages'); %>
 
-      <form action="/contato/register" method="post">
-        <input type="hidden" name="_csrf" value=<%= csrfToken %>>
-        <div class="form-group">
-          <label> Nome </label>
-          <input type="text" class="form-control" name="nome">
+            <% if(contato._id) { %>
+              <form action="/contato/edit/<%= contato._id %> " method="post">
+                <% } else { %>
+                  <form action="/contato/register" method="post">
+                    <% } %>
+                      <input type="hidden" name="_csrf" value=<%=csrfToken %>>
+                      <div class="form-group">
+                        <label> Nome </label>
+                        <input value="<%= contato.nome %>" type="text" class="form-control" name="nome">
+                      </div>
+                      <div class="form-group">
+                        <label> Sobrenome </label>
+                        <input value="<%= contato.sobrenome %>" type="text" class="form-control" name="sobrenome">
+                      </div>
+                      <div class="form-group">
+                        <label> Telefone </label>
+                        <input value="<%= contato.telefone %>" type="text" class="form-control" name="telefone">
+                      </div>
+                      <div class="form-group">
+                        <label> Endereço de email </label>
+                        <input value="<%= contato.email %>" type="email" class="form-control" name="email">
+                      </div>
+                      <button type="submit" class="btn btn-primary"> Salvar contato </button>
+                  </form>
+
+
         </div>
-        <div class="form-group">
-          <label> Sobrenome </label>
-          <input type="text" class="form-control" name="sobrenome">
-        </div>
-        <div class="form-group">
-          <label> Telefone </label>
-          <input type="text" class="form-control" name="telefone">
-        </div>
-        <div class="form-group">
-          <label> Endereço de email </label>
-          <input type="email" class="form-control" name="email">
-        </div>
-        <button type="submit" class="btn btn-primary"> Salvar contato </button>
-      </form>
-
-
+        <div class="col-lg-2"></div>
+      </div>
     </div>
-    <div class="col-lg-2"></div>
-  </div>
-</div>
 
-<%- include('includes/footer') %>
+    <%- include('includes/footer') %>

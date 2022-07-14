@@ -11,6 +11,8 @@ const ContatoSchema = new mongoose.Schema({
 
 const ContatoModel = mongoose.model('Contato', ContatoSchema);
 
+// this => contatoController
+
 function Contato(body) {
   this.body = body;
   this.errors = [];
@@ -18,11 +20,25 @@ function Contato(body) {
 }
 
 // função estática, fora do constructor
-Contato.buscaPorId = async (id)=> {
+Contato.buscaPorId = async (id) => {
   if (typeof id !== 'string') return;
-  const user = await ContatoModel.findById(id);
-  return user;
+  const contato = await ContatoModel.findById(id);
+  return contato;
 }; //
+
+Contato.buscaContatos = async () => {
+  const contatos = await ContatoModel.find().sort({ criadoEm: -1 });
+  return contatos;
+}; 
+
+Contato.delete = async (id) => {
+  if (typeof id !== 'string') return;
+  const contato = await ContatoModel.findByIdAndDelete(id);
+  return contato;
+}; 
+
+// neste model estamos trabalhando com constructor functions e prototypes
+// não funciona com arrow function uma vez que não retorna this
 
 Contato.prototype.register = async function () {
   this.valida();
@@ -51,6 +67,15 @@ Contato.prototype.cleanUp = function () {
     telefone: this.body.telefone,
     email: this.body.email
   }
+}
+
+Contato.prototype.edit = async function (id) {
+  if (typeof id !== 'string') return;
+  this.valida();
+  if (this.errors.length > 0) return;
+
+  // inicia em null
+  this.contato = await ContatoModel.findByIdAndUpdate(id, this.body, { new: true });
 }
 
 module.exports = Contato;
