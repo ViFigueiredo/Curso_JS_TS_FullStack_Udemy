@@ -1,0 +1,15 @@
+# Instalação
+1. npm i nodemon sucrase -D
+
+# Criar arquivo nodemon.json
+{
+  "execMap": {
+    "js": "node -r sucrase/register"
+  }
+}
+
+# Add no package.json
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "nodemon server.js"
+  },
