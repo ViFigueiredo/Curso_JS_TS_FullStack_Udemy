@@ -12,7 +12,6 @@ import Perfil from './modules/perfil';
 
 const login = new Form('.form-login');
 const cadastro = new Form('.form-cadastro');
-const upload = new Form('.form-cadastro');
 
 // método de inicialização do constructor
 // ESLint
