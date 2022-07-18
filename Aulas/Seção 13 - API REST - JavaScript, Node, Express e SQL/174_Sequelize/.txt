@@ -16,5 +16,5 @@ https://github.com/ViFigueiredo/WSL2_Docker_MariaDB
 # Criação de src/database/migrations com sequelize
 npx sequelize migration:create --name=alunos
 
-# 
+# Executa as migrations
 npx sequelize db:migrate
