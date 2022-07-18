@@ -1,6 +1,11 @@
-import { express } from 'express';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+import express from 'express';
 import homeRoutes from './src/routes/homeRoutes';
 
+// utilizando classes e construtores para criação de métodos do projeto
 class App {
   constructor() {
     this.app = express();

@@ -1,0 +1,20 @@
+# Instalação de variáveis de ambiente
+npm i dotenv
+
+# Importar para o projeto (app.js)
+import dotenv from 'dotenv';
+dotenv.config();
+
+# Instalação do Sequelize
+npm i sequelize
+npm i -D sequelize-cli
+
+# Instalação do SQL
+Neste projeto foi utilizado WSL2 + Docker + mariaDB
+https://github.com/ViFigueiredo/WSL2_Docker_MariaDB
+
+# Criação de src/database/migrations com sequelize
+npx sequelize migration:create --name=alunos
+
+# 
+npx sequelize db:migrate
