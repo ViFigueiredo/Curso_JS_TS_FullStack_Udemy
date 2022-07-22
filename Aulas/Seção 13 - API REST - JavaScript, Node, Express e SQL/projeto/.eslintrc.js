@@ -11,8 +11,9 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    'no-console': 'off',
-    'class-methods-use-this': 'off',
-    'import/first': 'off',
+    'no-console': 'off', // permite uso de log
+    'class-methods-use-this': 'off', // permite uso de classes sem "this"
+    'import/first': 'off', // permite inserir informações antes/depois dos imports
+    'eslint-disable max-len': 'true',
   },
 };

@@ -1,7 +1,12 @@
+
+https://sequelize.org/docs/v6/other-topics/migrations/
+
 # Instalação de variáveis de ambiente
 npm i dotenv
 
-# Importar para o projeto (app.js)
+# Criar arquivo de conexão de banco em "/.env"
+
+# Importar dotenv para o projeto (app.js)
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -18,3 +23,4 @@ npx sequelize migration:create --name=alunos
 
 # Executa as migrations
 npx sequelize db:migrate
+

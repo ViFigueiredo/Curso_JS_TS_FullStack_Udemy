@@ -1,26 +1,29 @@
-import dotenv from 'dotenv';
+import dotenv from 'dotenv'; // import dotenv
 
-dotenv.config();
+dotenv.config(); // carrega as informações do ".env"
 
-import express from 'express';
-import homeRoutes from './src/routes/homeRoutes';
+import './src/database'; // importa /database/index.js
+
+import express from 'express'; // node.express
+import homeRoutes from './src/routes/homeRoutes'; // homeRoutes
 
 // utilizando classes e construtores para criação de métodos do projeto
 class App {
   constructor() {
-    this.app = express();
-    this.middlewares();
-    this.routes();
+    this.app = express(); // invoca express
+    this.middlewares(); // invoca os middlewares
+    this.routes(); // invoca as rotas
   }
 
-  middlewares() {
-    this.app.use(express.urlencoded({ extended: true }));
-    this.app.use(express.json());
+  middlewares() { // configuração de middlewares
+    this.app.use(express.urlencoded({ extended: true })); // permite leitura de cadeia de dados (JSON)
+    this.app.use(express.json()); // permite o parse de requisições JSON
   }
 
-  routes() {
+  routes() { // configuração de rotas
     this.app.use('/', homeRoutes);
   }
 }
 
+// exporta toda a classe App
 export default new App().app;
