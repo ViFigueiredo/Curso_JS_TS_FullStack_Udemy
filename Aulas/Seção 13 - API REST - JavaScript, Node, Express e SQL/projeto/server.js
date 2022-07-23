@@ -1,4 +1,4 @@
-import app from './app'; // importa a classe App
+import app  from './app'; // importa a classe App
 
 // Executa o servidor nodeJS
 const port = 3001;
